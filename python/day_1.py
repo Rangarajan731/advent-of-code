@@ -1,7 +1,6 @@
-import requests
-from requests.models import Response
-
+import os
 import typing as t
+from pathlib import Path
 
 NUM_MAP = {
     "one": '1',
@@ -69,7 +68,7 @@ def process_line(line: str):
     return int(first_digit + last_digit)
 if __name__ == "__main__":
     final_result: int = 0
-    with open("/home/Rang/projects/advent-of-code/input/day_1.txt", mode='r') as f:
+    with Path(os.path.abspath(".")).parent.joinpath("input/day_1.txt").open() as f:
         for line in f:
             final_result += process_line(line=line)
         

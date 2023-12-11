@@ -29,6 +29,7 @@ class TextStack:
         if self.length > 2:
             return self.check()
         return None
+
     def check(self) -> t.Union[int, None]: 
         num_str = "".join(self.stack)
         for i in range((self.length - self.check_length)+1): 
